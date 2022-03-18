@@ -1,0 +1,40 @@
+﻿@page
+@model GrossaryListCreator.Pages.GL.EditModel
+@{
+}
+<form method="post">
+    <input hidden asp-for="list.ID" />
+
+    <div class="text-primary">
+
+        <h2 class="text-primary">Edit Grossary Item</h2>
+
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+        <label asp-for="list.ItemName"></label>
+        <input asp-for="list.ItemName" id="txt_item_name" class="form-control" />
+    </div>
+
+    <br />
+    <br />
+
+
+    <div>
+        <label asp-for="list.Quantity"></label>
+        <input asp-for="list.Quantity" id="txt_quantity" class="form-control" />
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+        <button type="submit" id="btn_create" class="btn btn-primary" style="width:150px;">Update</button>
+    </div>
+
+
+
+</form>

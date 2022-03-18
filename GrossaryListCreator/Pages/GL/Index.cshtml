@@ -1,0 +1,48 @@
+﻿@page
+@model GrossaryListCreator.Pages.GL.IndexModel
+@{
+}
+
+
+<div>
+
+    <h2 style="text-align:center" class="text-primary">Your Grocery...!!</h2>
+    <h4 style="text-align:left">
+        <a asp-page="Create" class="text-primary" >Add New Item</a>
+    </h4>
+    <br />
+
+</div>
+
+
+<div>
+    <center>
+        <table class="table table-bordered table-striped" cellpadding="2" cellspacing="2" width="50%">
+
+            <thead>
+                <tr>
+                    <th>Sno</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var i in Model.Lists)
+                {
+                    <tr>
+                        <td>@i.ID</td>
+                        <td>@i.ItemName</td>
+                        <td>@i.Quantity</td>
+                        <td width="15%">
+                            <a asp-page="Edit" asp-route-id="@i.ID" class="btn btn-primary">Edit</a>
+                            <a asp-page="Delete" asp-route-id="@i.ID" class="btn btn-primary">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </center>
+</div>
+
